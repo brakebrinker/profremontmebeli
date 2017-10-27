@@ -1,0 +1,561 @@
+/* Стилизация radio и checkbox */
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.radio {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 3px 0 0;
+}
+.radio + label {
+  cursor: pointer;
+}
+.radio:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.radio:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 35px;
+}
+.radio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b2c2d6;
+  border-radius: 50%;
+  background: #FFF;
+}
+.radio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3fb34f;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.25);
+  opacity: 0;
+  transition: all .2s;
+}
+.radio:checked + label:after {
+  opacity: 1;
+}
+.radio:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(255,255,0,.25);
+}
+
+.calc br{
+  display: none;
+}
+.calc input[type="checkbox"] {
+    display:none;
+}
+.calc input[type="checkbox"] + label {
+    color:#000;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+.calc input[type="checkbox"] + label span {
+    display:inline-block;
+    width:23px;
+    height:23px;
+    margin:0  4px 0 0;
+    vertical-align:middle;
+    background:url('img/box.png') top no-repeat;
+    cursor:pointer;
+}
+.calc input[type="checkbox"]:checked + label{
+    color: #3fb34f;
+}
+.calc input[type="checkbox"]:checked + label span {
+    background:url('img/box-c.png') top no-repeat;
+    
+}
+
+.calc {
+  box-shadow: 0px 10px 30px 0px rgba(13, 44, 84, 0.35);
+  width: 100%;
+  float: left;
+  background: #fff;	
+  border-radius: 10px;
+  font-family: Verdana;
+  padding: 60px 0 20px 0;
+}	
+
+.step {
+  position: relative;	
+  width: 100%;
+  padding: 0;
+  float: left;
+  margin-bottom: 40px;
+}	
+.step li {
+  list-style: none;
+  display: block;
+  width: 25%;
+  float: left;	
+  text-align: center;
+  position: relative;
+}
+.step li:before{
+  content: '';
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  z-index: 0;
+  background: #3fb34f;
+  top: 50%;
+  margin-top: -2.5px;
+  left: 0;
+}
+.step li a {
+display: inline-block;	
+border-radius: 20px;
+border: 2px solid #3fb34f;
+background: #fff;
+text-decoration: none;
+padding: 6px 10px;
+color: #000000;
+font-weight: 500;
+position: relative;
+z-index: 1;
+}
+.step .active {
+background: #3fb34f;
+color: #fff;
+}	
+
+.step span {
+position: absolute;
+top: 0;
+left: 0;	
+margin: 0 auto;
+}	
+
+.stepdesc {
+position: relative;	
+width: 86%;
+padding: 0;
+padding-left: 7%;
+}
+.stepdesc li {
+list-style: none;
+display: block;
+width: 25%;
+float: left;
+text-align: center;
+font-size: 14px;
+color: #D5938B;
+cursor: pointer;
+}
+.stepdesc .active {
+color: red;
+font-weight: bold;	
+}	
+#render{
+  float: left;
+  width: 100%;
+  padding: 0 25px 0 40px;
+}
+.ctitle {
+  display: inline-block;	
+  font-size: 24px;
+  color: #0d2c54;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  position: absolute;
+  top: 10px;	
+}
+.mobile-hide {
+  font-style: normal;
+}
+.tips {
+display: inline-block;	
+width: 50%;	
+padding: 10px 0;
+}
+
+.tipname {
+display: inline-block;
+vertical-align: middle;	
+margin-top: -4px;
+width: 80%;
+font-size:16px;
+}	
+.tipname br{
+  display: block;
+}
+	
+#step2, #step3, #step4 {
+display: none;
+
+}
+
+.subtitle {
+width: 100%;
+font-size: 18px;
+font-weight: normal;
+color: #000;
+font-weight: 500;
+}	
+
+.razmelem {
+display: inline-block;	
+width: 33%;
+margin:5px 0;
+}	
+.razmelem div {
+text-decoration: none!important;
+}	
+.tipname span {
+color: #8D902A;	
+font-size:12px;
+}
+
+.spal {
+padding: 10px 0 0px 0;
+margin-bottom: 0;
+}	
+
+.pishn {
+width: 32.5%;	
+}
+
+.zamena {
+display: inline-block;	
+width: 33%;
+padding: 0;
+}
+
+.uselem {
+display: inline-block;	
+width: 33%;
+padding: 0;
+}
+
+.matsel {
+font-size: 18px;
+color: #8D902A;
+border: 1px solid #8F8F8F;
+padding: 5px 20px;
+width: 150px;
+margin-bottom: 25px;
+}
+
+.matsel option {
+width: 100%;	
+padding: 7px 10px;
+}	
+
+.matsel {
+background: transparent;
+width: 250px;
+padding: 5px;
+font-size: 14px;
+border-radius: 5px;
+line-height: 1; 
+color: #000;  
+height: 34px;
+}	
+.styled-select {
+display: inline-block;	
+width: 380px;
+height: 34px;
+margin-top: 10px;
+overflow: hidden;
+background: url(../../../calc/img/new_arrow.html) no-repeat 98% 10px; #fff;
+border:none;
+}
+
+.matlabel {
+display: block;
+float: left;
+vertical-align: middle;
+position: relative;
+margin-right: 30px;
+padding-top: 15px;
+color: #000;
+font-size: 18px;
+font-weight: 500;
+}	
+
+.blokstili {
+display: none;	
+}
+.visib {
+display: block;	
+}
+
+
+.itogo {
+width: 100%;
+padding: 0;	
+float: left;
+}	
+.itogo li {
+width: 33.3%;	
+float: left;
+list-style: none;
+padding: 0;
+}	
+
+.itogo li {	
+padding: 0 ;
+}	
+.itogsumm {	
+font-weight: bold;
+}
+.itogo li div {	
+font-size: 18px;
+color: #000000;
+}	
+.itogo li p {	
+font-size: 24px;
+color: #ef662f;
+font-weight: 500;
+}
+.itogo p {
+	margin:5px 0;
+}
+.order_desc {
+	padding:20px 5px 0;
+	font-size:11px;
+}
+.order_special {
+	font-size:16px;
+	padding:10px 5px 5px 5px;
+	color: #6A6A6A;
+}
+.sendform {
+width: 100%;
+margin: 0 auto;
+}	
+.sendform label {
+width: 35%;
+display: block;
+float: left;
+text-align: right;
+font-size: 16px;
+padding-right: 15px;
+margin-bottom: 5px;
+padding-top: 8px;
+}	
+.sendform input {
+width: 200px;
+display: block;
+float: left;
+padding: 15px 10px;
+font-size: 14px;
+border: 2px solid #999;
+margin-right: 20px;
+}	
+	
+.sendform span {
+display: block;	
+float: right;
+background: #3fb34f;
+color: #fff;
+font-size: 18px;
+border-radius: 5px;
+padding: 15px 30px;
+cursor: pointer;
+}
+.sendform span:hover {
+text-decoration: none;
+    background: #47cc59;
+
+}
+
+.sendok {
+text-align: center;
+padding: 45px 0 20px 0;
+color: green;
+font-size: 28px;	
+}	
+	
+.next-steps{
+  float: left;
+  width: 100%;
+  margin-top: 25px;
+}
+.next-steps .order_desc{
+  float: right;
+  width: 55%;
+  padding: 0;
+}	
+.stepnext {
+float: right;
+background: #3fb34f; 
+border: 2px solid #3fb34f;
+border-radius: 5px;
+padding: 10px 30px;
+color: #fff;
+font-size: 18px;
+font-weight: 500; 
+cursor: pointer;
+}
+.stepnext:hover {
+  text-decoration: none;
+  border-color: #47cc59;
+    background: #47cc59;
+
+}
+.stepprev {
+float: left;
+font-size: 18px;
+font-weight: 500; 
+background: transparent; 
+border: 2px solid #3fb34f;
+border-radius: 5px;
+padding: 10px 30px; 
+cursor: pointer;
+color: #3fb34f;
+}
+
+.stepclear {
+display: inline-block;
+float: right;
+margin: 21px 20px 0 0;
+background: #F9304B; 
+border: 2px solid #F9304B;
+border-radius: 7px;
+padding: 5px 10px; 
+cursor: pointer;
+color:#fff;
+}
+h3.vyezdmastera {
+	margin: 0 5px 5px 60px;
+	font-size:14px;
+	color:#6A6A6A;
+	font-weight:normal;
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+.step li a {
+    font-size: 0px;
+    padding: 4px 9px;
+    text-align: center;
+        color: #000000;
+            background: #3fb34f;
+    font-weight: 500;
+}
+  .ctitle{
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .tips{
+    width: 100%;
+  }
+  .pishn{
+    width: 100%;
+  }
+  .zamena{
+    width: 100%;
+  }
+  .stepnext,.stepprev{
+    margin: 5px 0;
+        padding: 10px 25px;
+    text-align: center;
+  }
+  .styled-select {
+    width: 100%;
+}
+  .razmelem{
+    width: 100%;
+  }
+  .uselem{
+    width: 100%;
+  }
+  .itogo li{
+    width: 50%;
+    margin: 5px 0;
+  }
+  .next-steps .order_desc{
+    width: 100%;
+  }
+  .sendform span{
+    text-align: center;
+    width: 100%;
+  }
+  .sendform input{
+    width: 100%;
+    margin: 5px 0;
+  }
+.step .active {
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    padding: 4px 9px;
+    font-weight: 700;
+}
+.order_special {
+    font-size: 14px;
+    padding: 5px 0;
+    color: #000;
+}
+.step .active .mobile-hide {
+  color: #000;
+}
+.order_desc {
+    padding: 15px 0px 0;
+    font-size: 11px;
+}
+.mobile-hide {
+  font-size: 12px;
+  color: #fff;
+  font-style: normal;
+}
+#render {
+    float: left;
+    width: 100%;
+    padding: 0 20px 0 20px;
+}
+.subtitle {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.step {
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+.step li {
+    width: 15%;
+}
+
+.step > .activeli {
+    width: 55%;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+}
+.step li:before {
+    content: '';
+    width: 200%;
+    height: 5px;
+    position: absolute;
+    z-index: 0;
+    background: #3fb34f;
+    top: 50%;
+    margin-top: -2.5px;
+    left: -20px;
+}
+
+}
