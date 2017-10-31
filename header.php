@@ -9,51 +9,61 @@
 
 <?php wp_head(); ?> 
 </head>
+<body <?php if( is_front_page() ) echo 'class="home"'; ?>>
+ <header>
+   <div class="top-header gray-line">
+     <div class="container">
+       <ul class="left">
+         <li><a href="#" class="active">Частным лицам</a></li>
+         <li><a href="#">Корпоративным клиентам</a></li>
+       </ul>
+       <div class="top-contacts right">
+         <p><span class="whatsapp">Whatsapp</span> и <span class="viber">Viber</span> <span class="mobile-hide"> для фото</span>: +7 925 514-73-72</p>
+       </div>
+     </div>
+   </div>
 
-<body <?php body_class(); ?>>
+   <div class="bottom-header container">
+     <div class="bottom-header_left-part left">
+       <a href="#" class="main-logo inline"><img src="images/logo.png" alt="logo"></a>
+       <p class="work-hours inline"><?php echo get_option('work_modes'); ?></p>
+     </div>
 
-<?php do_action( 'storefront_before_site' ); ?>
-
-<!-- <div id="page" class="hfeed site"> -->
-    <?php do_action( 'storefront_before_header' ); ?>
-
-    <header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
-        <div class="container brownpart">
-            <div class="row">
-            <?php
-            /**
-             * Functions hooked into storefront_header action
-             *
-             * //@hooked storefront_skip_links                       - 0
-             * //@hooked storefront_social_icons                     - 10
-             * @hooked storefront_site_branding                    - 0
-             * @hooked storefront_call_number                      - 10
-             * @hooked storefront_secondary_navigation             - 30
-             * @hooked storefront_product_search                   - 40
-             * @hooked storefront_primary_navigation_wrapper       - 42
-             * @hooked storefront_primary_navigation               - 50
-             * @hooked storefront_header_cart                      - 60
-             * @hooked storefront_primary_navigation_wrapper_close - 68
-             */
-            do_action( 'storefront_header' ); ?>
-            </div>
+     <div class="bottom-header_right-part right">
+       <div class="mobile-hidden inline"><a href="#">Услуги</a><a href="#">Цены</a></div>
+       <p class="bottom-header_phone"><a href="tel:+<?php echo preg_replace("/[^0-9]/", '', get_option('mobile_phone')); ?>"><?php echo get_option('mobile_phone'); ?></a></p>
+       <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a>
+       <div id="hamburger" class="hamburger inline">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
-        <div class="blackline">
-            <div class="container">
-                <div class="row">
-                    <?php do_action( 'storefront_header_post' ); ?>
-                </div>
-            </div>
-        </div>
-    </header><!-- #masthead -->
-
-    <?php
-    /**
-     * Functions hooked in to storefront_before_content
-     *
-     * @hooked storefront_header_widget_region - 10
-     */
-    do_action( 'storefront_before_content' ); ?>
-
-<!--    <div id="content" class="site-content" tabindex="-1">
-        <div class="col-full"> -->
+     </div>
+      
+      <nav class="left">
+       
+       <ul>
+         <li class="current_page_item"><a href="#">О компании</a></li>
+         <li class="menu-item-has-children">
+         <a href="#">Услуги</a>
+         <ul class="sub-menu">
+           <li><a href="#">Ремонт мягкой мебели</a></li>
+           <li><a href="#">Ремонт кожаной мебели</a></li>
+           <li><a href="#">Ремонт диванов</a></li>
+         </ul>
+         </li>
+         <li><a href="#">Цены</a></li>
+         <li><a href="#">Примеры работ</a></li>
+         <li><a href="#">Подбор материала</a></li>
+         <li><a href="#">Вопрос-ответ</a></li>
+         <li><a href="#">Отзывы</a></li>
+         <li><a href="#">Статьи</a></li>
+         <li><a href="#">Контакты</a></li>
+         <li class="mobile-show">        
+          <a href="#">Сайт для корпоративных клиентов</a>
+         <p class="bottom-header_phone"><?php echo get_option('mobile_phone'); ?></p>
+         <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a></li>
+       </ul>
+      </nav>
+   </div>
+ </header>
