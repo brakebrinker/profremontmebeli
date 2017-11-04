@@ -1320,6 +1320,9 @@ nav li.current_page_item > a{
 /* /materials */
 
 /* examples */
+#tax-items-container {
+    transition: opacity .3s ease-in-out;
+}
 .no-results {
     text-align: center;
     margin: 0 0 40px;
