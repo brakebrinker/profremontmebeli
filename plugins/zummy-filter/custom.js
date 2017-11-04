@@ -1,9 +1,14 @@
 jQuery(document).ready(function($) {
-
+    
     var mainContent = $('#tax-items-container');
 
+    if ( ~location.search.indexOf('action=get_tax') ) {
+        //alert(location.search.indexOf('action=get_tax'));
+        //updateFilterElems();
+    }
+
     // обработка события клика по кнопке с фильтром
-    $('.show-filter').on('click', function(event) {
+    $('#tax-items-container').on('click', '.show-filter', function(event) {
         event.preventDefault();
 
         var thisWidget = $(this).closest('.widget');
@@ -15,7 +20,7 @@ jQuery(document).ready(function($) {
             var selectedTextures = [];
             var selectedProperties = [];
             // var selectColors = [];
-        
+
             $('input:checked').each(function(){
                 if ($(this).hasClass('color')) {
                     selectedColors.push($(this).attr('id'));
@@ -41,9 +46,17 @@ jQuery(document).ready(function($) {
 
     // функция отправки ajax апроса
     function ajaxTax(taxColors, taxTextures, taxProperties, termSlug) {
+        var data = {
+            action: 'get_tax',
+            colors: taxColors,
+            textures: taxTextures,
+            properties: taxProperties,
+            termslug: termSlug
+        }
+
 
         // с версии 2.8 'ajaxurl' всегда определен в админке
-        jQuery.get( 
+        jQuery.get(
             myFilter.ajaxurl,
             {
                 action: 'get_tax',
@@ -51,9 +64,22 @@ jQuery(document).ready(function($) {
                 textures: taxTextures,
                 properties: taxProperties,
                 termslug: termSlug
-            }, 
+            },
             function(response) {
                 mainContent.html(response);
+                updateFilterElems();
             });
+    }
+
+    function updateFilterElems(){
+        if ($('a.page-numbers').length > 1) {
+            var getUrl = $('a.page-numbers').attr('href');
+            var setUrl = getUrl.split('?')[1];
+
+
+            //location.search = '?' + setUrl;
+            location.hash = '#' + setUrl;
+
+        }
     }
 });

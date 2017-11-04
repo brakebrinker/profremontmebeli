@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aa73b7cb-a47b-4785-afaa-0fb5eb7c267e" name="profremont (project level)" url="http://194.67.198.34">
+        <fileTransfer host="194.67.198.34" port="21" rootFolder="/www/test.wmnew.ru/wp-content/">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

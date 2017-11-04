@@ -14,6 +14,10 @@ function ajax_show_post_from_tax() {
     $arrTextures = array();
     $arrProperties = array();
 
+    $term_slug = !empty($_GET['termslug']) ? esc_attr($_GET['termslug']) : false;
+
+    $cat = get_category_by_slug($term_slug);
+
     if (!empty($_GET['colors'])) {
        $arrColors = $_GET['colors'];
     } else {
@@ -49,8 +53,6 @@ function ajax_show_post_from_tax() {
 
         $arrProperties = get_terms( $argsProperties );
     }
-
-    $term_slug = !empty($_GET['termslug']) ? esc_attr($_GET['termslug']) : false;
     
     $args = array(
         'posts_per_page' => get_option('posts_per_page'),

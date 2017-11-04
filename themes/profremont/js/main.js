@@ -18,16 +18,16 @@ jQuery  (document).ready(function($) {
             return false;
         });
         
-          $('.filters-block .widget h3').click(function(){
+		$('#tax-items-container').on('click', '.filters-block .widget h3', function(){
             $('.filters-block .widget').removeClass('active');
             $( this ).closest('.filters-block .widget').addClass('active');
         });
 
-          $('.widget .test .close-filter').click(function(){
+		$('#tax-items-container').on('click', '.widget .test .close-filter', function(){
             $('.filters-block .widget').removeClass('active');
         });
 
-                    $('.filters-block .remove').click(function(){
+    	$('#tax-items-container').on('click', '.filters-block .remove', function(){
             $('.filters-block .widget').removeClass('active');
         });
 
