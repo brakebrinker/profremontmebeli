@@ -1,2 +1,7 @@
 profremont.sublime-project
 sftp-config.json
+.idea/
+dist/
+gulpfile.js
+package.json
+node_modules/

@@ -18,14 +18,14 @@
          <li><a href="#">Корпоративным клиентам</a></li>
        </ul>
        <div class="top-contacts right">
-         <p><span class="whatsapp">Whatsapp</span> и <span class="viber">Viber</span> <span class="mobile-hide"> для фото</span>: +7 925 514-73-72</p>
+         <p><span class="whatsapp">Whatsapp</span> и <span class="viber">Viber</span> <span class="mobile-hide"> для фото</span>: <?php echo get_option('site_telephone'); ?></p>
        </div>
      </div>
    </div>
 
    <div class="bottom-header container">
      <div class="bottom-header_left-part left">
-       <a href="#" class="main-logo inline"><img src="images/logo.png" alt="logo"></a>
+       <a href="<?php echo get_home_url(); ?>" class="main-logo inline"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="logo"></a>
        <p class="work-hours inline"><?php echo get_option('work_modes'); ?></p>
      </div>
 
@@ -42,7 +42,7 @@
       
       <nav class="left">
        
-       <ul>
+<!--        <ul>
          <li class="current_page_item"><a href="#">О компании</a></li>
          <li class="menu-item-has-children">
          <a href="#">Услуги</a>
@@ -58,12 +58,20 @@
          <li><a href="#">Вопрос-ответ</a></li>
          <li><a href="#">Отзывы</a></li>
          <li><a href="#">Статьи</a></li>
-         <li><a href="#">Контакты</a></li>
-         <li class="mobile-show">        
-          <a href="#">Сайт для корпоративных клиентов</a>
-         <p class="bottom-header_phone"><?php echo get_option('mobile_phone'); ?></p>
-         <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a></li>
-       </ul>
+         <li><a href="#">Контакты</a></li> -->
+
+<!--        </ul> -->
+       <?php 
+       wp_nav_menu( array(
+           'menu_class'=>'',
+           'container'       => '',
+           'theme_location'=>'top'
+       ) );
+       ?>
+       <li class="mobile-show">        
+        <a href="#">Сайт для корпоративных клиентов</a>
+       <p class="bottom-header_phone"><?php echo get_option('mobile_phone'); ?></p>
+       <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a></li>
       </nav>
    </div>
  </header>

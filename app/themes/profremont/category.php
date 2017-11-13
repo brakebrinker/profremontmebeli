@@ -1,11 +1,16 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : ?>
+	<?php 
+		$queried_object = get_queried_object(); 
+		$taxonomy = $queried_object->taxonomy;
+		$term_id = $queried_object->term_id; 
+	?>
+
 	<div class="content examples">
-		
 		<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
 
 		<h2><?php single_cat_title(); ?></h2>
-		<div class="content-subtitle">На этой странице показан вид фильтра и карточки материала</div>
+		<div class="content-subtitle"><?php echo get_field('category_subtitle', $taxonomy . '_' .$term_id ); ?></div>
 		<div id="tax-items-container">
 			<?php
 			$argsColor = array(
@@ -110,11 +115,11 @@
 					</figure>
 					<div class="examples-text">
 						<h4><?php the_title(); ?></h4>
-						<?php echo get_field('material_subtext', get_the_ID()); ?>
+						<?php echo get_field('contacts_subtitle', get_the_ID()); ?>
 					</div>
 				</a>
-			<?php endwhile; // End of the loop. ?>
-		</div>
+				<?php endwhile; // End of the loop. ?>
+			</div>
 		<div class="pagination-container container">
 			<?php
 			the_posts_pagination( array(
@@ -127,13 +132,7 @@
 		</div>
 	</div>
 
-	<div class="block-seo container">
-		<h2>Блок для SEO-текста</h2>
-		<p><span>Ремонт мебели на дому</span>
-		Эта услуга пользуется все большей и большей популярностью среди Москвичей и жителей Подмосковья, поскольку вы всегда держите под контролем ход выполнения всех работ и можете вносить коррективы, что говорится "на ходу". Кроме того, сокращаются общие издержки - не требуется оплачивать транспортировку, вы платите только за работу и материалы. Но все же, если ремонт мебели на дому не возможен, то мы выполняем транспортировку максимально бережно и соблюдаем все сроки. Вы можете быть спокойны - ваша мебель предстанет перед вами в потрясающем виде!</p>
-		<p><span>Особенности обивки стульев</span>
-		При восстановительных работах вы можете выбрать материал, который пойдет на новую обивку, самостоятельно. Ведь именно от него будет зависеть не только стиль мебели, но и то, как долго вы сможете им пользоваться. Кроме того, выбор обивки стула зависит от того, где используется этот предмет мебели. К примеру, если это ресторанные или барные стулья, то подойдет искусственная кожа – она хорошо противостоит жидкостям, которые могут попасть на стул. Для стульев, которые находятся в людных местах, например, в кинотеатрах или офисах, нужен очень износостойкий и прочный материал, например, шенилл.</p>
-	</div>
+	<div class="block-seo container"><?php echo get_field('category_subtitle_seotext', $taxonomy . '_' .$term_id ); ?></div>
 	<?php get_template_part( 'all', 'services' ); ?>
 </div>
 <?php endif; ?>

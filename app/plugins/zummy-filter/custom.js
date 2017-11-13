@@ -96,7 +96,21 @@ jQuery(document).ready(function($) {
 					mainContent.html(response);
 					requestAnimation(true);
 					updateUrl();
+					history.pushState({page_title: document.title}, '', location.href);
 				});
+		}
+
+		// функция отправки урлового ajax запроса
+		function ajaxTaxUrl(url) {
+			requestAnimation(false);
+			jQuery.get(
+				myFilter.ajaxurl + url,
+				function(response) {
+					mainContent.html(response);
+					requestAnimation(true);
+					updateUrl();
+					history.pushState({page_title: document.title}, '', location.href);
+			});
 		}
 
 		// функция очистки фильтра
@@ -113,19 +127,8 @@ jQuery(document).ready(function($) {
 					mainContent.html(response);
 					requestAnimation(true);
 					updateUrl();
+					history.pushState({page_title: document.title}, '', location.href);
 				});
-		}
-
-		// функция отправки урлового ajax запроса
-		function ajaxTaxUrl(url) {
-			requestAnimation(false);
-			jQuery.get(
-				myFilter.ajaxurl + url,
-				function(response) {
-					mainContent.html(response);
-					requestAnimation(true);
-					updateUrl();
-			});
 		}
 
 		// получение урла и его изменение в адресной строке после отправки ajax запроса

@@ -126,3 +126,20 @@ $wp_customize->add_control(
 );
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
+
+// Google map API KEY
+function my_acf_google_map_api( $api ){
+    
+    $api['key'] = 'AIzaSyAzbQxSvs_cxRpIhr9jq7iMSL5xQp6W3xQ';
+    
+    return $api;
+    
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+// регистрируем меню
+register_nav_menus(array(
+    'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
+    'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
+));

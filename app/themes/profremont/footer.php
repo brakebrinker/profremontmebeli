@@ -1,4 +1,5 @@
 <footer>
+  <?php if( is_front_page() ) { ?>
   <div class="footer-home-contacts container">
      <h2>Контактная информация</h2>
      <div class="content-subtitle">Позвоните нам или оставьте заявку и мы свяжемся с вами.</div>
@@ -36,6 +37,7 @@
        </form>
      </div>
   </div>
+  <?php } ?>
   <div class="container">
 
     <div class="footer-contacts left">
