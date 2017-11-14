@@ -8,49 +8,37 @@
          <h3>Адресы</h3>
          <div class="sub">Офис в Москве</div>
          <p>
-           <span>+7 495 514-73-72</span>
-           Нагатинская набережная, д. 12, к. 2 <br>г. Москва, 113355
+           <span><?php echo get_field('contacts_msk_phone', 79); ?></span>
+           <?php echo get_field('contacts_msk_address', 79); ?>
          </p>
          <div class="sub">Офис в Санкт-Петербурге</div>
          <p>
-           <span>+7 812 905-37-06</span>
-           5-й Верхний пер., д. 15 <br>г. Санкт-Петербург, 194292
+           <span><?php echo get_field('contacts_spb_phone', 79); ?></span>
+           <?php echo get_field('contacts_spb_address', 79); ?>
          </p>
-         <a href="mailto:info@profremontmebeli.ru" class="mail-link">info@profremontmebeli.ru</a>
+         <a href="mailto:<?php echo get_field('contacts_spb_email', 79); ?>" class="mail-link"><?php echo get_field('contacts_msk_email', 79); ?></a>
          <p>
            Также вы можете написать и скинуть нам  фотографии для оценки ремонта в Whatsapp и Viber:
-           <span>+7 925 514-73-72</span> 
+           <span><?php echo get_option('mobile_phone'); ?></span> 
          </p>
        </div>
 
-       <form class="right">
-         <h3>Напишите нам</h3> 
-         <div class="group"><input type="text" required><label>Вас зовут</label></div>
-         <div class="group"><input type="tel" name="phone" required><label>Ваш телефон</label></div>
-         <div class="group"><input type="text" name="mail" required><label>Электоронная почта</label></div>
-         <textarea placeholder="Ваше сообщение"></textarea>
-         <div class="checkbox">
-           <input type="checkbox" name="checkbox">
-           <label>Я даю свое согласие на обработку персональных данных в соответствие с законом №152-ФЗ «О персональных данных» и принимаю условия политики об обработке персональных данных</label>
-         </div>
-         <input type="submit" name="submit" value="Отправить сообщение" class="button-orange">
-       </form>
+        <?php
+        echo do_shortcode('[contact-form-7 id="210" html_class="right" title="Контактная форма Напишите нам на Главной"]'); 
+        ?>
      </div>
   </div>
   <?php } ?>
   <div class="container">
 
     <div class="footer-contacts left">
-      <a href="#" class="footer-logo left">
-        <img src="images/footer_logo.png" alt="logo">
+      <a href="<?php echo get_home_url(); ?>" class="footer-logo left">
+        <img src="<?php bloginfo('template_url'); ?>/images/footer_logo.png" alt="logo">
       </a>
-      <div class="footer-social left">
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      </div>
+      <?php if (!dynamic_sidebar('Область соц кнопок')):?> <?php endif ;?>
       <div class="footer-phone right">
-        <p class="inline">+7 495 357-72-73</p>
-        <a href="#" class="call-me trans-orange-button inline">Перезвоните мне</a>
+        <p class="inline"><?php echo get_option('site_telephone'); ?></p>
+        <a href="#" class="call-me trans-orange-button inline" data-toggle="modal" data-target="#callback">Перезвоните мне</a>
       </div>
     </div>
 
@@ -60,25 +48,23 @@
         <li><a href="#">Корпоративным клиентам</a></li>
       </ul>
 
-      <ul>
-        <li><a href="#">О компании</a></li>
-        <li><a href="#">Цены</a></li>
-        <li><a href="#">Примеры работ</a></li>
-        <li><a href="#">Отзывы</a></li>
-        <li><a href="#">Подбор материала</a></li>
-        <li><a href="#">Вопрос-ответ</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
+      <?php
+      wp_nav_menu( array(
+          'menu_class'=>'',
+          'container'       => '',
+          'theme_location'=>'bottom'
+      ) );
 
-      <ul>
-        <li><a href="#">Ремонт мебели</a></li>
-        <li><a href="#">Перетяжка мебели</a></li>
-        <li><a href="#">Обивка мебели</a></li>
-        <li><a href="#">Реставрация мебели</a></li>
-      </ul>
+      wp_nav_menu( array(
+          'menu_class'=>'',
+          'container'       => '',
+          'theme_location'=>'bottom_serv'
+      ) );
+      ?>
+
     </div>
     <div class="mobile-show">
-      <p class="bottom-phone">+7 495 514-73-72</p>
+      <p class="bottom-phone"><?php echo get_option('site_telephone'); ?></p>
       <a href="#" class="call-me-button">Перезвоните мне</a>
     </div>
     <div class="footer-copy left">
@@ -93,31 +79,7 @@
   </div>
 </footer>
 <a href="#" class="scrollup"></a>
-
-<div id="callback" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-    <div class="callback-close" data-dismiss="modal"><img src="images/close-btn.png" alt="..."></div>
-      <form class="right">
-          <h2>Обратный звонок</h2>
-          <div class="subtitle">Оставьте свои контактные данные и мы вам перезвоним вам в течении 15 минут.</div>
-          <div class="group"><input type="text" required><label>Вас зовут</label></div>
-          <div class="group"><input type="tel" name="phone" required><label>Ваш телефон</label></div>
-          <textarea placeholder="Ваше сообщение"></textarea>
-          <div class="checkbox">
-            <input type="checkbox" name="checkbox">
-            <label>Я даю свое согласие на обработку персональных данных в соответствие с законом №152-ФЗ «О персональных данных» и принимаю условия политики об обработке персональных данных</label>
-          </div>
-          <input type="submit" name="submit" value="Отправить сообщение" class="button-green">
-        </form>
-
-
-    </div>
-
-  </div>
-</div>
+<?php get_template_part( 'popup', 'forms' ); ?>
 
 <?php wp_footer(); ?>
 </body>

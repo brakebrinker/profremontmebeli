@@ -20,10 +20,10 @@ Template Name: Шаблон Главная страница
 			<img src="<?php echo $sliderImg; ?>" alt="<?php echo $sliderTitle; ?>">
 			<?php } ?>
 			<?php if ($sliderTitle) { ?>
-			<p class="slide-main-title">Своя настоящая<br> <span>служба контроля<br> качества</span></p>
+			<p class="slide-main-title"><?php echo $sliderTitle; ?></p>
 			<?php } ?>
 			<?php if ($sliderSubtitle) { ?>
-			<p class="slide-green-title"><span>Гарантия</span>на работы до 24 месяцев</p>
+			<p class="slide-green-title"><?php echo $sliderSubtitle; ?></p>
 			<?php } ?>
 		</div>
 
@@ -111,8 +111,8 @@ Template Name: Шаблон Главная страница
 		</div>
 
 		<div class="content-contacts_right right">
-			<p class="inline"><?php echo get_option('mobile_phone'); ?></p>
-			<a href="#" class="send-request inline button-green">Отправить заявку</a>
+			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
+			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
 		</div>
 
 	</div>
@@ -155,8 +155,8 @@ Template Name: Шаблон Главная страница
 		</div>
 
 		<div class="content-contacts_right right">
-			<p class="inline"><?php echo get_option('mobile_phone'); ?></p>
-			<a href="#" class="send-request inline button-green">Отправить заявку</a>
+			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
+			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
 		</div>
 
 	</div>
@@ -191,7 +191,7 @@ Template Name: Шаблон Главная страница
 	<?php endif; ?>
 </div>
 
-<div class="content-price container">
+<div id="sc-price" class="content-price container">
 	<h2>Стоимость услуг</h2>
 	<div class="content-subtitle"><?php echo get_field('home_cost_subtitle', get_the_ID()); ?>
 	</div>
@@ -207,18 +207,18 @@ Template Name: Шаблон Главная страница
 				<?php endwhile; ?>
 			</ul>
 			<?php endif; ?>
-			<a href="#" class="button-green">Заказать ремонт</a>
+			<a href="#sc-order-now" class="button-green">Заказать ремонт</a>
 			<p>Для более точной цены вы можете прислать нам фотографии мебели <span class="whatsapp">в Whatsapp</span> и <span class="viber">Viber</span>: <?php echo get_option('mobile_phone'); ?></p>
 		</div>
 		<a class="button-yellow mobile-show calc-button">Калькулятор стоимости</a>
 		<div class="catalog-calculator calculator">
 
-			<iframe src="calc/index.html" style="border: none; width:100%; height: 650px;"> </iframe>
+			<iframe src="<?php bloginfo('template_url'); ?>/calc/index.php" style="border: none; width:100%; height: 650px;"> </iframe>
 		</div>
 	</div>
 </div>
 
-<div class="content-review container">
+<div id="sc-review" class="content-review container">
 	<h2>Отзывы</h2>
 	<div class="content-subtitle"><?php echo get_field('home_cost_subtitle', get_the_ID()); ?></div>
 	<div class="content-review_slider">
@@ -239,7 +239,7 @@ Template Name: Шаблон Главная страница
 </div>
 
 <div class="content-order-now container">
-	<div class="content-order-now_form">
+	<div id="sc-order-now" class="content-order-now_form">
 		<?php get_template_part( 'form_order', 'now' ); ?>
 	</div>
 
@@ -271,7 +271,7 @@ Template Name: Шаблон Главная страница
 	</div>
 </div>
 
-<div class="content-order-faq container">
+<div id="sc-faq" class="content-order-faq container">
 	<h2>Статьи, Вопросы и ответы</h2>
 	<div class="content-subtitle"><?php echo get_field('home_articles_subtitle', get_the_ID()); ?></div>
 		<?php if( have_rows('home_articles_ch') ): 
@@ -302,8 +302,8 @@ Template Name: Шаблон Главная страница
 		</div>
 
 		<div class="content-contacts_right right">
-			<p class="inline"><?php echo get_option('mobile_phone'); ?></p>
-			<a href="#" class="send-request inline button-green">Отправить заявку</a>
+			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
+			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
 		</div>
 
 	</div>

@@ -18,7 +18,7 @@
          <li><a href="#">Корпоративным клиентам</a></li>
        </ul>
        <div class="top-contacts right">
-         <p><span class="whatsapp">Whatsapp</span> и <span class="viber">Viber</span> <span class="mobile-hide"> для фото</span>: <?php echo get_option('site_telephone'); ?></p>
+         <p><span class="whatsapp">Whatsapp</span> и <span class="viber">Viber</span> <span class="mobile-hide"> для фото</span>: <?php echo get_option('mobile_phone'); ?></p>
        </div>
      </div>
    </div>
@@ -31,7 +31,7 @@
 
      <div class="bottom-header_right-part right">
        <div class="mobile-hidden inline"><a href="#">Услуги</a><a href="#">Цены</a></div>
-       <p class="bottom-header_phone"><a href="tel:+<?php echo preg_replace("/[^0-9]/", '', get_option('mobile_phone')); ?>"><?php echo get_option('mobile_phone'); ?></a></p>
+       <p class="bottom-header_phone"><a href="tel:+<?php echo preg_replace("/[^0-9]/", '', get_option('site_telephone')); ?>"><?php echo get_option('site_telephone'); ?></a></p>
        <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a>
        <div id="hamburger" class="hamburger inline">
           <div class="line"></div>
@@ -41,26 +41,6 @@
      </div>
       
       <nav class="left">
-       
-<!--        <ul>
-         <li class="current_page_item"><a href="#">О компании</a></li>
-         <li class="menu-item-has-children">
-         <a href="#">Услуги</a>
-         <ul class="sub-menu">
-           <li><a href="#">Ремонт мягкой мебели</a></li>
-           <li><a href="#">Ремонт кожаной мебели</a></li>
-           <li><a href="#">Ремонт диванов</a></li>
-         </ul>
-         </li>
-         <li><a href="#">Цены</a></li>
-         <li><a href="#">Примеры работ</a></li>
-         <li><a href="#">Подбор материала</a></li>
-         <li><a href="#">Вопрос-ответ</a></li>
-         <li><a href="#">Отзывы</a></li>
-         <li><a href="#">Статьи</a></li>
-         <li><a href="#">Контакты</a></li> -->
-
-<!--        </ul> -->
        <?php 
        wp_nav_menu( array(
            'menu_class'=>'',

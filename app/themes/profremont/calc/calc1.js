@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+$(document).ready(function(){
 	
 var send = '';	
 	
@@ -29,10 +29,8 @@ var send = '';
 		Summator();	
 		return false;
 	});	
-	$('.step li a').click(function(){
-$('.step li').removeClass('activeli');
-		$( this ).parent().addClass('activeli');
-});	
+	
+
 // Смена типа мебели
 	$('.tips input').change(function(){
 		var num = $(this).attr('id');
@@ -70,12 +68,14 @@ $('.step li').removeClass('activeli');
 		$(this).css('border', '1px solid #999');
 	});	
 	
+var name = '';	
+var phone = '';	
+	
 //	Отправка заявки
 	$('.sendform span').click(function(){
-		Summator();
 		var err = 0;
-		var name = $('#itog1').val();
-		var phone = $('#itog2').val();
+		name = $('#itog1').val();
+		phone = $('#itog2').val();
 			if (name == '') { $('#itog1').css('border', '1px solid red') ; err++; }
 			if (phone == '') { $('#itog2').css('border', '1px solid red') ; err++; }
 			if (err > 0) return false;
@@ -164,7 +164,7 @@ $('.step li').removeClass('activeli');
 				koef_change_price = koef_change_price + Number($(elem).data('koef_change_price'));
 				if (koef_change_name == '') koef_change_name = $(elem).val();
 					else koef_change_name = koef_change_name+','+$(elem).val();
-				if ($('#zam1').is(":checked")) { koef_change_price = 0; koef_change_name = ''; }
+				if ($('#zam1').is(":checked")) { koef_change_price = 1; koef_change_name = ''; }
 			}
 			
 			// усложнения			
@@ -193,16 +193,16 @@ $('.step li').removeClass('activeli');
 			$('.imat').html(imat);
 			
 			// итоговая стоимость			
-			var isum = Math.round((price_def + price_size + price_additional)*koef_lush_cost + (price_def + price_additional)*koef_change_price + super_task_total + (size_def + size_additional)*material_price);
-			isum = irab+imat;
+			var isum = (price_def + price_size + price_additional)*koef_lush_cost + (price_def + price_additional)*koef_change_price + super_task_total + (size_def + size_additional)*material_price;
+			isum = Math.round(irab+imat);
 			$('.isum').html(isum);
 
 		
 		//	собираем список для отправки на почту		
 		send = '';	
 		send += '---------  Данные о заказчике --------<br><br>';
-		send += 'Имя: '+$('#itog1').val()+'<br>';
-		send += 'Телефон: '+$('#itog2').val()+'<br>';
+		send += 'Имя: '+name+'<br>';
+		send += 'Телефон: '+phone+'<br>';
 		send += '<br>-----------  Выбранные опции ---------<br><br>';
 		send += 'Тип мебели: '+tipname+'<br>';
 		send += 'Размер мебели: '+razmname+'<br>';

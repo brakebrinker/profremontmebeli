@@ -5,12 +5,13 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<link rel="stylesheet" type="text/css" href="calc.css" media="screen" />	
-	<script type="text/javascript" src="../../../../ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>	
 	<script type="text/javascript" charset="utf-8" src="calc.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 
+<?php include 'calc.php' ?>
 
 <div class="calc">
 	<ul class="step">
@@ -19,59 +20,43 @@
 		<li><a href="#" data-step="3"><i class="mobile-hide">3</i>. Материалы</a></li>
 		<li><a href="#" data-step="4"><i class="mobile-hide">4</i>. Стоимость</a></li>	
 	</ul>
-
 <!-- Шаги -->	
 <form id="render">	
 
 <div id="step1">		
-	<h2 class="ctitle">Выберите тип мебели</h2>	
-		
+	<h2 class="ctitle" style="margin-left:58px;">Выберите тип мебели</h2>	
+
 	<div>
-		<div class="tips">
-			<input class="radio" name="tip" id="1" type="radio" data-price_def="3000" data-size_def="5" value="Диван прямой"><label for="1"><div class="tipname">Диван прямой</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="2" type="radio" data-price_def="5000" data-size_def="8" value="Диван угловой"><label for="2"><div class="tipname">Диван угловой</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="3" type="radio" data-price_def="1500" data-size_def="2" value="Кресло с мягкими подлокотниками"><label for="3"><div class="tipname">Кресло с мягкими подлокотниками</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="4" type="radio" data-price_def="1200" data-size_def="2" value="Кресло с деревянными подлокотниками"><label for="4"><div class="tipname">Кресло с деревянными подлокотниками</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="5" type="radio" data-price_def="2000" data-size_def="3" value="Кухонный уголок"><label for="5"><div class="tipname">Кухонный уголок</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="6" type="radio" data-price_def="500" data-size_def="1" value="Стул с мягкой спинкой"><label for="6"><div class="tipname">Стул с мягкой спинкой</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="7" type="radio" data-price_def="400" data-size_def="1" value="Стул без мягкой спинки"><label for="7"><div class="tipname">Стул без мягкой спинки</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="8" type="radio" data-price_def="500" data-size_def="1" value="Пуф"><label for="8"><div class="tipname">Пуф</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="9" type="radio" data-price_def="800" data-size_def="1" value="Банкетка"><label for="9"><div class="tipname">Банкетка</div></label>
-			</div><div class="tips">
-			<input class="radio" name="tip" id="10" type="radio" data-price_def="1000" data-size_def="2" value="Изголовье кровати"><label for="10"><div class="tipname">Изголовье кровати</div></label>
-			</div>	</div>
+		<?php RenderStep1(); ?>
+	</div>	
 	<span class="next-steps">
 		<span class="stepnext" alt="2">Далее</span>
 	</span>	
 </div>
 
 <div id="step2">		
-	<h2 class="ctitle">Параметры мебели</h2>			
+	<h2 class="ctitle" style="margin-left:58px;">Параметры мебели</h2>			
+
 	<div>
-			</div>
+		<?php RenderStep2(); ?>
+	</div>	
 	<span class="next-steps">
 		<span class="stepnext" alt="3">Далее</span>
 		<span class="stepprev" alt="1">Назад</span>	
-    </span>
+	</span>
 </div>
 
 
 <div id="step3">		
-	<h2 class="ctitle">Материал обивки</h2>	
+	<h2 class="ctitle" style="margin-left:58px;">Материал обивки</h2>	
+
 	<div>
-			</div>
+		<?php RenderStep3(); ?>
+	</div>
 	<span class="next-steps">
-	   <span class="stepnext" alt="4">Далее</span>
-	   <span class="stepprev" alt="2">Назад</span>
-	</span>   
+		<span class="stepnext" alt="4">Далее</span>
+		<span class="stepprev" alt="2">Назад</span>
+	</span>
 </div>
 
 
@@ -116,6 +101,4 @@
 
 
 </body>
-
-<!-- Mirrored from webdego.com/sites/profRemont/calc/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Oct 2017 15:31:50 GMT -->
 </html>

@@ -10,7 +10,7 @@
 				<h1><?php if (get_field('services_title_bg', get_the_ID())) {
 						echo get_field('services_title_bg', get_the_ID()); 
 					} else {
-						the_title();
+						echo strip_tags(get_the_title());
 					}
 					?></h1>
 				<div class="content-subtitle"><?php echo get_field('services_subtitle', get_the_ID()); ?></div>
@@ -22,7 +22,7 @@
 
 			<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
 
-			<h1><?php the_title(); ?></h1>
+			<h1><?php echo strip_tags(get_the_title()); ?></h1>
 			<div class="content-subtitle"><?php echo get_field('services_subtitle', get_the_ID()); ?></div>
 
 		</div>
@@ -110,7 +110,7 @@
 </div>
 
 <div class="catalog-calculator calculator small-container container">
-	<iframe src="calc/index.html" style="border: none; width:100%; height: 650px;"> </iframe>
+	<iframe src="<?php bloginfo('template_url'); ?>/calc/index.php" style="border: none; width:100%; height: 650px;"> </iframe>
 </div>
 
 <div class="catalog-list container small-container">

@@ -106,14 +106,6 @@ Template Name: Шаблон Контакты
 
                    </div>
                  </div>
-                 <script>
-                   jQuery(document).ready(function($) {
-                      $('.group').on('focus', 'input', function() {
-                        $('.group').removeClass('active');
-                        $(this).closest('.group').addClass('active');
-                      });
-                   });
-                 </script>
                  <style>
                      .acf-map {
                         width: 100%;

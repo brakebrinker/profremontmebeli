@@ -84,24 +84,24 @@
   box-shadow: 0px 10px 30px 0px rgba(13, 44, 84, 0.35);
   width: 100%;
   float: left;
-  background: #fff; 
+  background: #fff;	
   border-radius: 10px;
   font-family: Verdana;
   padding: 60px 0 20px 0;
-} 
+}	
 
 .step {
-  position: relative; 
+  position: relative;	
   width: 100%;
   padding: 0;
   float: left;
   margin-bottom: 40px;
-} 
+}	
 .step li {
   list-style: none;
   display: block;
   width: 25%;
-  float: left;  
+  float: left;	
   text-align: center;
   position: relative;
 }
@@ -117,7 +117,7 @@
   left: 0;
 }
 .step li a {
-display: inline-block;  
+display: inline-block;	
 border-radius: 20px;
 border: 2px solid #3fb34f;
 background: #fff;
@@ -131,17 +131,17 @@ z-index: 1;
 .step .active {
 background: #3fb34f;
 color: #fff;
-} 
+}	
 
 .step span {
 position: absolute;
 top: 0;
-left: 0;  
+left: 0;	
 margin: 0 auto;
-} 
+}	
 
 .stepdesc {
-position: relative; 
+position: relative;	
 width: 86%;
 padding: 0;
 padding-left: 7%;
@@ -158,15 +158,15 @@ cursor: pointer;
 }
 .stepdesc .active {
 color: red;
-font-weight: bold;  
-} 
+font-weight: bold;	
+}	
 #render{
   float: left;
   width: 100%;
   padding: 0 25px 0 40px;
 }
 .ctitle {
-  display: inline-block;  
+  display: inline-block;	
   font-size: 24px;
   color: #0d2c54;
   text-transform: uppercase;
@@ -174,28 +174,28 @@ font-weight: bold;
   margin-bottom: 10px;
   font-weight: 500;
   position: absolute;
-  top: 10px;  
+  top: 10px;	
 }
 .mobile-hide {
   font-style: normal;
 }
 .tips {
-display: inline-block;  
-width: 50%; 
+display: inline-block;	
+width: 50%;	
 padding: 10px 0;
 }
 
 .tipname {
 display: inline-block;
-vertical-align: middle; 
+vertical-align: middle;	
 margin-top: -4px;
 width: 80%;
 font-size:16px;
-} 
+}	
 .tipname br{
   display: block;
 }
-  
+	
 #step2, #step3, #step4 {
 display: none;
 
@@ -207,38 +207,38 @@ font-size: 18px;
 font-weight: normal;
 color: #000;
 font-weight: 500;
-} 
+}	
 
 .razmelem {
-display: inline-block;  
+display: inline-block;	
 width: 33%;
 margin:5px 0;
-} 
+}	
 .razmelem div {
 text-decoration: none!important;
-} 
+}	
 .tipname span {
-color: #8D902A; 
+color: #8D902A;	
 font-size:12px;
 }
 
 .spal {
 padding: 10px 0 0px 0;
 margin-bottom: 0;
-} 
+}	
 
 .pishn {
-width: 32.5%; 
+width: 32.5%;	
 }
 
 .zamena {
-display: inline-block;  
+display: inline-block;	
 width: 33%;
 padding: 0;
 }
 
 .uselem {
-display: inline-block;  
+display: inline-block;	
 width: 33%;
 padding: 0;
 }
@@ -253,9 +253,9 @@ margin-bottom: 25px;
 }
 
 .matsel option {
-width: 100%;  
+width: 100%;	
 padding: 7px 10px;
-} 
+}	
 
 .matsel {
 background: transparent;
@@ -266,9 +266,9 @@ border-radius: 5px;
 line-height: 1; 
 color: #000;  
 height: 34px;
-} 
+}	
 .styled-select {
-display: inline-block;  
+display: inline-block;	
 width: 380px;
 height: 34px;
 margin-top: 10px;
@@ -287,59 +287,59 @@ padding-top: 15px;
 color: #000;
 font-size: 18px;
 font-weight: 500;
-} 
+}	
 
 .blokstili {
-display: none;  
+display: none;	
 }
 .visib {
-display: block; 
+display: block;	
 }
 
 
 .itogo {
 width: 100%;
-padding: 0; 
+padding: 0;	
 float: left;
-} 
+}	
 .itogo li {
-width: 33.3%; 
+width: 33.3%;	
 float: left;
 list-style: none;
 padding: 0;
-} 
+}	
 
-.itogo li { 
+.itogo li {	
 padding: 0 ;
-} 
-.itogsumm { 
+}	
+.itogsumm {	
 font-weight: bold;
 }
-.itogo li div { 
+.itogo li div {	
 font-size: 18px;
 color: #000000;
-} 
-.itogo li p { 
+}	
+.itogo li p {	
 font-size: 24px;
 color: #ef662f;
 font-weight: 500;
 }
 .itogo p {
-  margin:5px 0;
+	margin:5px 0;
 }
 .order_desc {
-  padding:20px 5px 0;
-  font-size:11px;
+	padding:20px 5px 0;
+	font-size:11px;
 }
 .order_special {
-  font-size:16px;
-  padding:10px 5px 5px 5px;
-  color: #6A6A6A;
+	font-size:16px;
+	padding:10px 5px 5px 5px;
+	color: #6A6A6A;
 }
 .sendform {
 width: 100%;
 margin: 0 auto;
-} 
+}	
 .sendform label {
 width: 35%;
 display: block;
@@ -349,7 +349,7 @@ font-size: 16px;
 padding-right: 15px;
 margin-bottom: 5px;
 padding-top: 8px;
-} 
+}	
 .sendform input {
 width: 200px;
 display: block;
@@ -358,10 +358,10 @@ padding: 15px 10px;
 font-size: 14px;
 border: 2px solid #999;
 margin-right: 20px;
-} 
-  
+}	
+	
 .sendform span {
-display: block; 
+display: block;	
 float: right;
 background: #3fb34f;
 color: #fff;
@@ -380,9 +380,9 @@ text-decoration: none;
 text-align: center;
 padding: 45px 0 20px 0;
 color: green;
-font-size: 28px;  
-} 
-  
+font-size: 28px;	
+}	
+	
 .next-steps{
   float: left;
   width: 100%;
@@ -392,7 +392,7 @@ font-size: 28px;
   float: right;
   width: 55%;
   padding: 0;
-} 
+}	
 .stepnext {
 float: right;
 background: #3fb34f; 
@@ -434,10 +434,10 @@ cursor: pointer;
 color:#fff;
 }
 h3.vyezdmastera {
-  margin: 0 5px 5px 60px;
-  font-size:14px;
-  color:#6A6A6A;
-  font-weight:normal;
+	margin: 0 5px 5px 60px;
+	font-size:14px;
+	color:#6A6A6A;
+	font-weight:normal;
 }
 
 

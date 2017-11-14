@@ -141,5 +141,20 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 // регистрируем меню
 register_nav_menus(array(
     'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
-    'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
+    'bottom' => 'Нижнее меню',
+    'bottom_serv' => 'Нижнее меню услуг',
+    'bottom_switch' => 'Нижнее меню под лого'
+));
+
+//виджет кнопок соц сетей
+add_theme_support( widgets );
+
+register_sidebar(array(
+   'name' => __("Область соц кнопок", CURRENT_THEME),
+   'id' => 'social-buttons-area',
+   'description' => __("Область соц кнопок в футере", CURRENT_THEME),
+   'before_widget' => '<div id="%1$s">',
+   'after_widget' => '</div>',
+   'before_title' => '<h4>',
+   'after_title' => '</h4>',
 ));

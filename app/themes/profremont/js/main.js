@@ -31,7 +31,14 @@ jQuery  (document).ready(function($) {
             $('.filters-block .widget').removeClass('active');
         });
 
-
+    //анимация в формах
+    $('.group').on('focusin', 'input', function() {
+      $('.group').removeClass('active');
+      $(this).closest('.group').addClass('active');
+    });
+    $('.group').on('focusout', 'input', function() {
+      $('.group').removeClass('active');
+    });
 
 	if (window.matchMedia("(min-width: 768px)").matches){
 

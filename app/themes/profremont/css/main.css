@@ -341,13 +341,17 @@ nav a{
         font-weight: 400;
     font-size: 20px;
 }
-nav a:hover{
-   color: #ef662f;
-   text-decoration: none; 
-}
 nav a:visited,nav a:active,nav a:focus{
   color: #0d2c54;
   text-decoration: none !important;
+}
+nav a:hover {
+   color: #ef662f;
+   text-decoration: none; 
+}
+nav #menu-glavnoe-menyu a:hover {
+     color: #ef662f;
+     text-decoration: none; 
 }
 nav li.menu-item-has-children:hover{
     -webkit-filter: drop-shadow(0px 0px 10px rgba(15, 14, 9, 0.28));
@@ -2114,6 +2118,8 @@ display: none;
   padding: 15px 20px;
   height: 105px;
   resize: none;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: normal;
 }
 .footer-home-contacts form .checkbox label{
   font-size: 12px;
@@ -2125,6 +2131,7 @@ display: none;
     font-size: 16px;
     padding: 0 20px 0px 20px;
     line-height: 43px;
+    font-family: 'Fira Sans', sans-serif;
 }
 .footer-home-contacts input {
     border: 2px solid #999999;
@@ -2147,9 +2154,23 @@ display: none;
   color: #fff;
   margin-top: 31px;
 }
+form.wpcf7-form.right .checkbox label span {
+    margin: 0;
+}
+form.wpcf7-form.right .checkbox label {
+    padding: 0;
+}
+form.wpcf7-form.right span.wpcf7-list-item-label {
+    padding-left: 20px;
+    font-weight: normal;
+}
 .footer-contacts{
     margin-top: 65px;
     width: 100%;
+}
+.footer-contacts .fa {
+    font-size: 20px;
+    padding-top: 5px;
 }
 .footer-phone p{
     font-size: 20px;
