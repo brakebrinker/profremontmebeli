@@ -1,18 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
-
-<!-- Mirrored from webdego.com/sites/profRemont/calc/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Oct 2017 15:31:50 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-	<link rel="stylesheet" type="text/css" href="calc.css" media="screen" />	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>	
-	<script type="text/javascript" charset="utf-8" src="calc.js"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<body>
-
-<?php include 'calc.php' ?>
-
 <div class="calc">
 	<ul class="step">
 		<li class="activeli"><a class="active" href="#" data-step="1"><i class="mobile-hide">1</i>. Тип</a></li>
@@ -24,7 +9,7 @@
 <form id="render">	
 
 <div id="step1">		
-	<h2 class="ctitle" style="margin-left:58px;">Выберите тип мебели</h2>	
+	<h2 class="ctitle">Выберите тип мебели</h2>	
 
 	<div>
 		<?php RenderStep1(); ?>
@@ -35,7 +20,7 @@
 </div>
 
 <div id="step2">		
-	<h2 class="ctitle" style="margin-left:58px;">Параметры мебели</h2>			
+	<h2 class="ctitle">Параметры мебели</h2>			
 
 	<div>
 		<?php RenderStep2(); ?>
@@ -48,10 +33,10 @@
 
 
 <div id="step3">		
-	<h2 class="ctitle" style="margin-left:58px;">Материал обивки</h2>	
+	<h2 class="ctitle">Материал обивки</h2>	
 
 	<div>
-		<?php RenderStep3(); ?>
+		<?php// RenderStep3(); ?>
 	</div>
 	<span class="next-steps">
 		<span class="stepnext" alt="4">Далее</span>
@@ -91,14 +76,7 @@
 	</span> 	
 </div>
 
-
-	
-
 </form>
 <!-- /Шаги -->
 
 </div>
-
-
-</body>
-</html>

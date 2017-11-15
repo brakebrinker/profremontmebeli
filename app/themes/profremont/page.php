@@ -42,7 +42,7 @@
     <?php } ?>
 
     <?php $imgAfter = get_field('post_img_after', get_the_ID()); ?>
-    <?php if ($imgAfter) ?>
+    <?php if ($imgAfter) { ?>
      <figure class="right">
         <img src="<?php echo $imgAfter['url']; ?>" alt="image">
      </figure>

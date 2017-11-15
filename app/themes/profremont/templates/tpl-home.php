@@ -212,8 +212,7 @@ Template Name: Шаблон Главная страница
 		</div>
 		<a class="button-yellow mobile-show calc-button">Калькулятор стоимости</a>
 		<div class="catalog-calculator calculator">
-
-			<iframe src="<?php bloginfo('template_url'); ?>/calc/index.php" style="border: none; width:100%; height: 650px;"> </iframe>
+			<?php echo do_shortcode('[profcalc]'); ?>
 		</div>
 	</div>
 </div>

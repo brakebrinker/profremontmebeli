@@ -2,7 +2,7 @@
 // include('Calc/index.php') ;
 // Отрисовка типов мебели изи дата файла
 function RenderStep1() {
-	$fp = file('tip.txt');
+	$fp = file(plugin_dir_path( __FILE__ ) . 'tip.txt');
 	foreach ($fp as $val) {
 		$tmp = explode('#', $val); $num = trim($tmp[0]); $tip = trim($tmp[1]);
 		$tip = explode ('|', $tip);

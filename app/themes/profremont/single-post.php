@@ -4,7 +4,12 @@
 
 <div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
 
-<h1><?php the_title(); ?></h1>
+<h1><?php if (get_field('seo_h1', get_queried_object_id())) 
+          echo get_field('seo_h1', get_queried_object_id());
+        else
+          the_title();
+      ?>
+</h1>
 <div class="content-subtitle"><?php echo get_field('post_subtitle', get_the_ID()); ?></div>
 
  <div class="single-text_wrapper container">
@@ -42,7 +47,7 @@
     <?php } ?>
 
     <?php $imgAfter = get_field('post_img_after', get_the_ID()); ?>
-    <?php if ($imgAfter) ?>
+    <?php if ($imgAfter) { ?>
      <figure class="right">
         <img src="<?php echo $imgAfter['url']; ?>" alt="image">
      </figure>

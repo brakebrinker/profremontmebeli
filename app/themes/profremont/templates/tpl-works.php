@@ -19,7 +19,14 @@ query_posts($args);
   
  <div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
 
- <h2><?php the_title(); ?></h2>
+ <h2>
+ 	<?php 
+ 	if (get_field('seo_h1', get_queried_object_id())) 
+ 		echo get_field('seo_h1', get_queried_object_id());
+ 	else
+ 		the_title();
+ 	?>
+ </h2>
  <div class="content-subtitle"><?php echo get_field('works_subtitle', get_the_ID()); ?></div>
 
  <div class="works_wrapper container">

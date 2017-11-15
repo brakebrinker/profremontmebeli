@@ -3,10 +3,11 @@ jQuery(document).ready(function($){
 var send = '';	
 	
 // инициализация при первой загрузке
+console.log(profCalc.calcurl);
 	$('#1').trigger('click');
 	$.ajax({
 	    type: 'POST',
-		url: 'calc.php',
+		url: profCalc.calcurl,
 		data: 'render=yes&id=1',
 		success: function(data){
 			data = data.split('||');
@@ -38,7 +39,7 @@ $('.step li').removeClass('activeli');
 		var num = $(this).attr('id');
 		$.ajax({
 		  type: 'POST',
-		  url: 'calc.php',
+		  url: profCalc.calcurl,
 		  data: 'render=yes&id='+num,
 		  success: function(data){
 			data = data.split('||');
@@ -82,7 +83,7 @@ $('.step li').removeClass('activeli');
 		// отправка данных		
 		$.ajax({
 		  type: 'POST',
-		  url: 'calc.php',
+		  url: profCalc.calcurl,
 		  data: 'sender=yes&data='+send,
 		  success: function(data){
 			$('.sendform').fadeOut(700);
