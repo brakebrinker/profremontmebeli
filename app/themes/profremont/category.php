@@ -7,8 +7,9 @@
 	?>
 
 	<div class="content examples">
-		<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
 
+		<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+		
 		<h2><?php single_cat_title(); ?></h2>
 		<div class="content-subtitle"><?php echo get_field('category_subtitle', $taxonomy . '_' .$term_id ); ?></div>
 		<div id="tax-items-container">

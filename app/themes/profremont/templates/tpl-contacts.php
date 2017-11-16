@@ -7,7 +7,8 @@ Template Name: Шаблон Контакты
 <?php if ( have_posts() ) : ?>
 <div class="content contacts">
 
-      <div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+    <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+    
     <?php while ( have_posts() ) : the_post(); ?>
            <h2>
             <?php 

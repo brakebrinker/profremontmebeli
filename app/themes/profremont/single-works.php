@@ -2,7 +2,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="content single-works">
 
-		<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+		<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
 		<h2><?php if (get_field('seo_h1', get_queried_object_id())) 
 					echo get_field('seo_h1', get_queried_object_id());

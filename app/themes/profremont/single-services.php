@@ -5,7 +5,7 @@
 		<div class="catalog-banner" <?php if (get_field('services_banner', get_the_ID())) { ?>style="background: url(<?php echo get_field('services_banner', get_the_ID()); ?>) no-repeat center; background-size: cover; <?php } ?>">
 			<div class="container micro-container">
 
-				<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+				<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
 				<h1><?php if (get_field('services_title_bg', get_the_ID())) {
 						echo get_field('services_title_bg', get_the_ID()); 
@@ -23,7 +23,7 @@
 		<?php } else { ?>
 		<div class="catalog-just container small-container">
 
-			<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+			<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
 			<h1>
 				<?php 

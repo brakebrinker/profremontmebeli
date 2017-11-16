@@ -26,7 +26,7 @@ $termsProperty = get_terms($argss);
 
 <div class="content materials">
 
-	<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+	<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
 	<h2>
 		<?php 

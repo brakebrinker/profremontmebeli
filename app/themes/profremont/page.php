@@ -2,9 +2,16 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="content single-text">
 
-<div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
-<h1><?php the_title(); ?></h1>
+<h1>
+  <?php 
+  if (get_field('seo_h1', get_queried_object_id())) 
+      echo get_field('seo_h1', get_queried_object_id());
+  else
+      the_title();
+  ?>
+</h1>
 <div class="content-subtitle"><?php echo get_field('post_subtitle', get_the_ID()); ?></div>
 
  <div class="single-text_wrapper container">

@@ -17,7 +17,7 @@ query_posts($args);
 <?php if ( have_posts() ) : ?>
  <div class="content works">
   
- <div class="breadcrumbs"><a href="#">Главная страница</a> / <a href="#">Подбор материала</a></div>
+	<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
  <h2>
  	<?php 
