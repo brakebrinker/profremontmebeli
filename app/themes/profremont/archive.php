@@ -7,6 +7,7 @@
 	?>
 
 	<div class="content examples">
+		
 		<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 
 		<h2><?php single_cat_title(); ?></h2>
