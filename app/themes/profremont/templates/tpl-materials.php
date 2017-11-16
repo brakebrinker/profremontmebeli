@@ -25,9 +25,7 @@ $termsProperty = get_terms($argss);
 ?>
 
 <div class="content materials">
-
 	<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-
 	<h2>
 		<?php 
 		if (get_field('seo_h1', get_queried_object_id())) 
