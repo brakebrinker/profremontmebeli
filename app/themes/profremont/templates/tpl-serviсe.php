@@ -179,7 +179,24 @@ Template Name: Шаблон Услуга
 </div>
 <?php } ?>
 
-<?php if(get_field('insert_all_services', get_the_ID())) get_template_part( 'all', 'services' ); ?>
+<?php if(get_field('insert_all_services', get_the_ID())) { ?>
+	<?php if (get_field('menu_all_services', get_the_ID())) { ?>
+	<div class="content-also container">
+	  <h4>Все наши услуги</h4>
+	  <div class="content-also_wrapper">
+	      <div class="mobile-scroll">
+			<?php 
+			wp_nav_menu( array(
+			    'menu_class'=>'',
+			    'container'       => '',
+			    'menu'            => get_field('menu_all_services', get_the_ID()), 
+			) );
+			?>
+	      </div>
+	  </div>
+	</div>
+	<?php } ?>
+<?php } ?>
 
 </div>
 <?php endwhile; // End of the loop. ?>

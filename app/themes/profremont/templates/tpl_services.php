@@ -48,7 +48,7 @@ $arrServices = get_pages( $args );
 		<div class="block-seo container">
 			<?php echo get_field('services_seo_text', get_the_ID()); ?>
 		</div>
-		
+
 		<?php if(get_field('insert_all_services', get_the_ID())) get_template_part( 'all', 'services' ); ?>
 
 	</div>

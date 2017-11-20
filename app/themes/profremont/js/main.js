@@ -17,7 +17,7 @@ jQuery  (document).ready(function($) {
             $("html, body").animate({ scrollTop: 0 }, 600);
             return false;
         });
-        
+
 		$('#tax-items-container').on('click', '.filters-block .widget h3', function(){
             $('.filters-block .widget').removeClass('active');
             $( this ).closest('.filters-block .widget').addClass('active');

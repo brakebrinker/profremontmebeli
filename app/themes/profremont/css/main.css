@@ -1223,6 +1223,9 @@ nav li.current_page_item > a{
 .content-also_wrapper{
   text-align: center;
 }
+.content-also_wrapper li {
+    display: inline-block;
+}
 .content-also_wrapper a{
   display: inline-block;
   background: #fff;
