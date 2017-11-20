@@ -291,9 +291,13 @@ function dimox_breadcrumbs() {
         }
         //-----------------------------
         printf($link, $home_url . $pageLink . '/', $post_type->labels->name);
-        echo $sep . $before; the_category('/', 'multiple');
 
-        if ($show_current) echo $before . $postTitle . $after;
+        if (get_the_category()) {
+            echo $sep; 
+            the_category('/', 'multiple'); 
+        }
+
+        if ($show_current) echo $sep . $before . $postTitle . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, $sep);
