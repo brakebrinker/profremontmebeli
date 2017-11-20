@@ -266,7 +266,8 @@ h4{
       display: none;
     }
 .content-main-slider .slick-list{
- height: calc(100vh - 185px);
+  height: calc(100vh - 185px);
+  padding: 0 40px!important; 
 }
 .content-main-slider .slick-track {
   height: 100%;
@@ -629,6 +630,10 @@ nav li.current_page_item > a{
     text-decoration: none;
     color: #ff3000;
 }
+.content-services_item-wrapper {
+    float: left;
+    position: relative;
+}
 .content-services_item:hover img{
     -webkit-box-shadow: 5px 5px 0px 0px rgba(63,179,79,1);
    -moz-box-shadow: 5px 5px 0px 0px rgba(63,179,79,1);
@@ -652,6 +657,8 @@ nav li.current_page_item > a{
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    height: 41px;
+    overflow: hidden;
     -webkit-transition: all ease-out 0.25s;
   -moz-transition: all ease-out 0.25s;
   -o-transition: all ease-out 0.25s;
@@ -1192,9 +1199,14 @@ nav li.current_page_item > a{
   margin-top: 69px;
   width: 1030px !important;
 }
+.seo-container {
+    float: left;
+    transition: height .3s;
+}
 .seo-container_col{
   width: 33.3%;
-  height: 283px;
+  height: 100%;
+  /*height: 283px;*/
   overflow: hidden;
   font-family: 'PT Serif', serif;
   padding-right: 50px;
@@ -1310,7 +1322,7 @@ nav li.current_page_item > a{
   width: 30.3%;
   background: #fff;
   border-radius: 5px;
-  margin: 0 1.5%;
+  margin: 0 1.5% 25px;
 }
 .materials-item img{
   width: 100%;
@@ -2611,6 +2623,9 @@ input:focus ~ .highlight {
 .button-yellow:visited{
    color: #fff;
    text-decoration: none;
+}
+.content-services_item-wrapper {
+    float: none;
 }
 footer .mobile-show  {
   display: block;

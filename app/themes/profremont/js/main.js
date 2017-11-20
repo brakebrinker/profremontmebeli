@@ -42,6 +42,25 @@ jQuery  (document).ready(function($) {
       }
     });
 
+    //раскрытие блока для сео на главной
+    var seoCont = $('.seo-container').height();
+
+    $('.seo-container').css("height", seoCont/3 + "px");
+
+    var checkSeo = true;
+
+    $('.seo-more-wrapper').on('click', '.seo-more', function(e) {
+    	e.preventDefault();
+
+    	if (checkSeo === true) {
+    		$('.seo-container').css("height", seoCont + 50 + "px");
+    		checkSeo = false;
+    	} else {
+    		$('.seo-container').css("height", seoCont/3 + "px");
+    		checkSeo = true;
+    	}
+    });
+
 	if (window.matchMedia("(min-width: 768px)").matches){
 
 	$('.content-slider-wrapper').slick({
@@ -60,6 +79,7 @@ jQuery  (document).ready(function($) {
 
 	$('.content-slider-nav').slick({
 	  slidesToShow: 5,
+	  centerMode: true,
 	  slidesToScroll: 1,
 	  asNavFor: '.content-slider-wrapper',
 	  focusOnSelect: true,
