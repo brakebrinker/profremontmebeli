@@ -1019,6 +1019,9 @@ nav li.current_page_item > a{
 .content-review_slider-container .slick-slide{
   padding: 0 20px;
 }
+.content-review_slider-container .slick-slide > p:first-child {
+    color: #333;
+}
 .content-order-now{
   border: 10px solid #3fb34f;
   padding: 40px 120px;
@@ -2745,7 +2748,7 @@ footer .call-me-button {
         width: 2px;
         height: 100%;
     }
-    .content-how-work li:after{
+    .content-how-work li:after, .content-how-work li em {
         left: 60px;
     }
     .content-how-work li:last-child:before{

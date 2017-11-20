@@ -233,7 +233,16 @@ function dimox_breadcrumbs() {
         $cat = $cat->cat_ID;
         echo $sep . sprintf($link, get_category_link($cat), get_cat_name($cat)) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
       } else {
-        if ($show_current) echo $sep . $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+        if ($show_current) {
+            $post_type = get_post_type_object(get_post_type());
+            $slug = $post_type->rewrite;
+            if ($slug['slug'] === 'materials') {
+                $pageLink = wp_basename(get_page_link(192));
+                $postTypeName = $post_type->labels->name;
+                echo $sep . sprintf($link, $home_url . $pageLink, $postTypeName) . $after;
+            }
+            echo $sep . $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+        } 
       }
 
     } elseif ( is_search() ) {
@@ -275,13 +284,16 @@ function dimox_breadcrumbs() {
             $pageLink = wp_basename(get_page_link(26));
         } elseif ($slug['slug'] === 'services') {
             $pageLink = wp_basename(get_page_link(126));
+        } elseif ($slug['slug'] === 'faq') {
+            $pageLink = wp_basename(get_page_link(269));
         } else {
             $pageLink = $slug['slug'];
         }
         //-----------------------------
-        printf($link, $home_url . $pageLink . '/', $post_type->labels->singular_name);
+        printf($link, $home_url . $pageLink . '/', $post_type->labels->name);
+        echo $sep . $before; the_category('/', 'multiple');
 
-        if ($show_current) echo $sep . $before . $postTitle . $after;
+        if ($show_current) echo $before . $postTitle . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, $sep);
@@ -343,6 +355,15 @@ function dimox_breadcrumbs() {
           if ($i != count($breadcrumbs)-1) echo $sep;
         }
       }
+      $page = get_page($parent_id);
+      //-------Переопределение последних заголовков крошек
+      if (get_field('seo_breadcrumbs', $page->ID)) {
+        $postTitle = get_field('seo_breadcrumbs', $page->ID);
+      } else {
+        $postTitle = get_the_title($page->ID);
+      }
+      //================
+
       if ($show_current) echo $sep . $before . $postTitle . $after;
 
     } elseif ( is_tag() ) {
@@ -378,3 +399,16 @@ function dimox_breadcrumbs() {
 
   }
 } // end of dimox_breadcrumbs()
+
+// пункт главного меню
+add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+function your_custom_menu_item ( $items, $args ) {
+if ($args->theme_location === 'top') {
+$items .= '<li class="mobile-show">        
+        <a href="#">Сайт для корпоративных клиентов</a>
+       <p class="bottom-header_phone">' . get_option('mobile_phone') . '</p>
+       <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a></li>';
+}
+return $items;
+}
+

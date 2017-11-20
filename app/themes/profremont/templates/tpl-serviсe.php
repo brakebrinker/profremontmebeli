@@ -1,3 +1,8 @@
+<?php 
+/*
+Template Name: Шаблон Услуга
+*/
+?>
 <?php get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="content catalog">

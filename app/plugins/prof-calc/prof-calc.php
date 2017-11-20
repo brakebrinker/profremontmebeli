@@ -10,7 +10,9 @@ add_shortcode( 'profcalc', 'prof_calc_shortcode' );
 
 function prof_calc_shortcode() { 
 	include plugin_dir_path( __FILE__ ) . 'calc.php';
-	require plugin_dir_path(__FILE__) . 'prof-calc-tpl.php';
+	include plugin_dir_path(__FILE__) . 'prof-calc-tpl.php';
+
+	return $result;
 }
 
 function prof_calc_register_stylesheet(){

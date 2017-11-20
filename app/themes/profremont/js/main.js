@@ -33,11 +33,13 @@ jQuery  (document).ready(function($) {
 
     //анимация в формах
     $('.group').on('focusin', 'input', function() {
-      $('.group').removeClass('active');
+      //$('.group').removeClass('active');
       $(this).closest('.group').addClass('active');
     });
     $('.group').on('focusout', 'input', function() {
-      $('.group').removeClass('active');
+      if ($(this).val() === '') {
+      	$(this).closest('.group').removeClass('active');
+      }
     });
 
 	if (window.matchMedia("(min-width: 768px)").matches){

@@ -6,10 +6,13 @@ function RenderStep1() {
 	foreach ($fp as $val) {
 		$tmp = explode('#', $val); $num = trim($tmp[0]); $tip = trim($tmp[1]);
 		$tip = explode ('|', $tip);
-		echo '<div class="tips">
+		$rs1 .= '<div class="tips">
 			<input class="radio" name="tip" id="'.$num.'" type="radio" data-price_def="'.$tip[1].'" data-size_def="'.$tip[2].'" value="'.$tip[0].'"><label for="'.$num.'"><div class="tipname">'.$tip[0].'</div></label>
 			</div>';
-	}	
+
+		
+	}
+	return $rs1;
 }
 
 

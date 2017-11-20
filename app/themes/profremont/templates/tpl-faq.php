@@ -1,13 +1,13 @@
 <?php 
 /*
-Template Name: Шаблон список статей
+Template Name: Шаблон список Вопрос-ответ
 */
 ?>
 <?php get_header(); ?>
 <?php 
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $args = array(
-	'post_type' => 'articles',
+	'post_type' => 'faq',
 	'posts_per_page' => get_option('posts_per_page'),
 	'post_status' => 'publish',
 	'paged' => $paged,

@@ -1,4 +1,4 @@
-<div class="calc">
+<?php $result = '<div class="calc">
 	<ul class="step">
 		<li class="activeli"><a class="active" href="#" data-step="1"><i class="mobile-hide">1</i>. Тип</a></li>
 		<li><a href="#" data-step="2"><i class="mobile-hide">2</i>. Параметры</a></li>
@@ -12,7 +12,7 @@
 	<h2 class="ctitle">Выберите тип мебели</h2>	
 
 	<div>
-		<?php RenderStep1(); ?>
+		' . RenderStep1() . '
 	</div>	
 	<span class="next-steps">
 		<span class="stepnext" alt="2">Далее</span>
@@ -23,7 +23,7 @@
 	<h2 class="ctitle">Параметры мебели</h2>			
 
 	<div>
-		<?php RenderStep2(); ?>
+		' . RenderStep2() . '
 	</div>	
 	<span class="next-steps">
 		<span class="stepnext" alt="3">Далее</span>
@@ -36,7 +36,7 @@
 	<h2 class="ctitle">Материал обивки</h2>	
 
 	<div>
-		<?php// RenderStep3(); ?>
+		' . RenderStep3() . '
 	</div>
 	<span class="next-steps">
 		<span class="stepnext" alt="4">Далее</span>
@@ -79,4 +79,5 @@
 </form>
 <!-- /Шаги -->
 
-</div>
+</div>';
+?>

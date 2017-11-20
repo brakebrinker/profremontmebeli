@@ -211,9 +211,11 @@ Template Name: Шаблон Главная страница
 			<p>Для более точной цены вы можете прислать нам фотографии мебели <span class="whatsapp">в Whatsapp</span> и <span class="viber">Viber</span>: <?php echo get_option('mobile_phone'); ?></p>
 		</div>
 		<a class="button-yellow mobile-show calc-button">Калькулятор стоимости</a>
+		<?php if (get_field('home_cost_calc', get_the_ID())) { ?>
 		<div class="catalog-calculator calculator">
 			<?php echo do_shortcode('[profcalc]'); ?>
 		</div>
+		<?php } ?>
 	</div>
 </div>
 

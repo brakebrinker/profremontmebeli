@@ -60,10 +60,6 @@
            'theme_location'=>'top'
        ) );
        ?>
-       <li class="mobile-show">        
-        <a href="#">Сайт для корпоративных клиентов</a>
-       <p class="bottom-header_phone"><?php echo get_option('mobile_phone'); ?></p>
-       <a href="#" class="call-me-button button-green" data-toggle="modal" data-target="#callback">Перезвоните мне</a></li>
       </nav>
    </div>
  </header>
