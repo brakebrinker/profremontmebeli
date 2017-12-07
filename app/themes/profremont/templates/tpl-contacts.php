@@ -72,9 +72,7 @@ Template Name: Шаблон Контакты
                            </div>
 
                        </div>
-                       
-                   </div>
-
+                 </div>
                  <div class="tab-pane" id="Petersburg" role="tabpanel">
                    <div class="contact-page-phone left">
                      <div class="address">

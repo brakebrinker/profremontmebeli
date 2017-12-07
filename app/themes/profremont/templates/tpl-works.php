@@ -37,7 +37,11 @@ query_posts($args);
 		?>
 		<a href="<?php the_permalink(); ?>" class="works-item">
 	     <figure>
-	       <img src="<?php echo $images[0]['sizes']['medium']; ?>" alt="image">
+	     	<?php if ($images) {?>
+	       	<img src="<?php echo $images[0]['sizes']['medium']; ?>" alt="image">
+	       	<?php } else { ?>
+	       	<img src="<?php bloginfo('template_url'); ?>/images/no-img.jpg" alt="image">
+	       	<?php } ?>
 	     </figure>
 	     <div class="works-text">
 	       <h3><?php the_title(); ?></h3>
