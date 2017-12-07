@@ -94,11 +94,11 @@ $properties = get_terms( $argsProperty );
 
 	<div class="examples_wrapper container">
 		<?php while ( have_posts() ) : the_post();
-		$matImg = get_field('material_img', get_the_ID());
+		// $matImg = get_field('material_img', get_the_ID());
 		?>
 		<a href="<?php the_permalink(); ?>" class="examples-item">
 			<figure>
-				<img src="<?php echo $matImg['sizes']['medium']; ?>" alt="image">
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), array(268, 197)); ?>" alt="image">
 			</figure>
 			<div class="examples-text">
 				<h4><?php the_title(); ?></h4>

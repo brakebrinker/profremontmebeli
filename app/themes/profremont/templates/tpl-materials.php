@@ -11,7 +11,8 @@ Template Name: Шаблон страницы Материалы
 $args = array(
 	'taxonomy'  => 'category',
 	'exclude'	=> '1',
-	'orderby'	=> 'term_id'
+	'orderby'	=> 'term_id',
+	'parent'	=> 0
 );
 
 $termsCategory = get_terms($args);

@@ -42,15 +42,19 @@
    </div>
 
    <div class="single-text_images">
+    <?php $imgBefore = get_field('post_img_before', get_the_ID()); ?>
+    <?php if ($imgBefore) { ?>
      <figure class="left">
-      <?php $imgBefore = get_field('post_img_before', get_the_ID()); ?>
        <img src="<?php echo $imgBefore['url']; ?>" alt="image">
      </figure>
+    <?php } ?>
 
+    <?php $imgAfter = get_field('post_img_after', get_the_ID()); ?>
+    <?php if ($imgAfter) { ?>
      <figure class="right">
-       <?php $imgAfter = get_field('post_img_after', get_the_ID()); ?>
         <img src="<?php echo $imgAfter['url']; ?>" alt="image">
      </figure>
+     <?php } ?>
    </div>
     
     <div class="single-text_home micro-container container">

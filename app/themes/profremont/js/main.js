@@ -61,6 +61,25 @@ jQuery  (document).ready(function($) {
     	}
     });
 
+    //раскрытие меню
+    var switchMenu = true;
+
+    $('#menu-glavnoe-menyu').on('click', ' .menu-item-has-children > a', function(e) {
+        e.preventDefault();
+
+        if (switchMenu) {
+            $(this).siblings('ul.sub-menu').fadeIn(0, function(){
+                $(this).closest('.menu-item-has-children').addClass('active');
+                switchMenu = false;
+            });
+        } else {
+            $(this).siblings('ul.sub-menu').fadeOut(0, function(){
+                $(this).closest('.menu-item-has-children').removeClass('active');
+                switchMenu = true;
+            });
+        }
+    });
+
 	if (window.matchMedia("(min-width: 768px)").matches){
 
 	$('.content-slider-wrapper').slick({

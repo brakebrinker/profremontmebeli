@@ -10,7 +10,9 @@ $args = array(
 	'numberposts' => -1,
 	'hierarchical' => 0,
 	'post_status' => 'publish',
-	'order' => 'ASC'
+	'order' => 'ASC',
+	'meta_key'=>'services_show',
+	'meta_value'=>true
 );
 
 $arrServices = get_pages( $args );

@@ -18,47 +18,74 @@ function ajax_show_post_from_tax() {
 
 	$cat = get_category_by_slug($term_slug);
 
-	if (!empty($_GET['colors'])) {
-		$arrColors = $_GET['colors'];
-	} else {
-		$argsColor = array(
-			'taxonomy' => 'colors',
-			'hide_empty' => true,
-			'fields' => 'slugs',
-		);
-
-		$arrColors = get_terms( $argsColor );
-	}
-
-	if (!empty($_GET['textures'])) {
-		$arrTextures = $_GET['textures'];
-	} else {
-		$argsTextures = array(
-			'taxonomy' => 'textures',
-			'hide_empty' => true,
-			'fields' => 'slugs',
-		);
-
-		$arrTextures = get_terms( $argsTextures );
-	}
-
-	if (!empty($_GET['properties'])) {
-		$arrProperties = $_GET['properties'];
-	} else {
-		$argsProperties = array(
-			'taxonomy' => 'properties',
-			'hide_empty' => true,
-			'fields' => 'slugs',
-		);
-
-		$arrProperties = get_terms( $argsProperties );
-	}
-
 	if (!empty($_GET['page'])) {
 		$page = esc_attr($_GET['page']);
 	} else {
 		$page = '';
 	}
+
+	if (!empty($_GET['colors'])) {
+		$arrColors = array(
+			'taxonomy' => 'colors',
+			'field' => 'slug',
+			'terms' => $_GET['colors'],
+		);
+	} else {
+/*		$argsColor = array(
+			'taxonomy' => 'colors',
+			'hide_empty' => true,
+			'fields' => 'slugs',
+		);
+
+		$arrColors = get_terms( $argsColor );*/
+		$arrColors = '';
+	}
+
+	if (!empty($_GET['textures'])) {
+		$arrTextures = array(
+			'taxonomy' => 'textures',
+			'field' => 'slug',
+			'terms' => $_GET['textures'],
+		);
+	} else {
+/*		$argsTextures = array(
+			'taxonomy' => 'textures',
+			'hide_empty' => true,
+			'fields' => 'slugs',
+		);
+
+		$arrTextures = get_terms( $argsTextures );*/
+		$arrTextures = '';
+	}
+
+	if (!empty($_GET['properties'])) {
+		$arrProperties = array(
+				'taxonomy' => 'properties',
+				'field' => 'slug',
+				'terms' => $_GET['properties'],
+			);
+	} else {
+/*		$argsProperties = array(
+			'taxonomy' => 'properties',
+			'hide_empty' => true,
+			'fields' => 'slugs',
+		);
+
+		$arrProperties = get_terms( $argsProperties );*/
+		 $arrProperties = '';
+	}
+	// $propertiesFilter = array(
+	// 	'taxonomy' => 'properties',
+	// 	'field' => 'slug',
+	// 	'terms' => $arrProperties,
+	// )
+
+	$tax_query = array(
+			'relation' => 'AND',
+			$arrColors,
+			$arrTextures,
+			$arrProperties
+		);
 
 	$args = array(
 		'posts_per_page' => get_option('posts_per_page'),
@@ -66,24 +93,7 @@ function ajax_show_post_from_tax() {
 		'post_status' => 'publish',
 		'paged' => $page,
 		'category_name' => $term_slug,
-		'tax_query' => array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => 'colors',
-				'field' => 'slug',
-				'terms' => $arrColors,
-			),
-			array(
-				'taxonomy' => 'textures',
-				'field' => 'slug',
-				'terms' => $arrTextures,
-			),
-			array(
-				'taxonomy' => 'properties',
-				'field' => 'slug',
-				'terms' => $arrProperties,
-			)
-		)
+		'tax_query' => $tax_query
 	);
 	query_posts($args);
 

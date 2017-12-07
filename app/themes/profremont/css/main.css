@@ -354,7 +354,8 @@ nav #menu-glavnoe-menyu a:hover {
      color: #ef662f;
      text-decoration: none; 
 }
-nav li.menu-item-has-children:hover{
+/*nav li.menu-item-has-children:hover{*/
+nav li.menu-item-has-children.active{
     -webkit-filter: drop-shadow(0px 0px 10px rgba(15, 14, 9, 0.28));
     -moz-filter: drop-shadow(0px 0px 10px rgba(15, 14, 9, 0.28));
     -o-filter: drop-shadow(0px 0px 10px rgba(15, 14, 9, 0.28));
@@ -367,7 +368,8 @@ nav li.menu-item-has-children:hover{
     -o-transition: none;
     transition: none;
 }
-nav li:hover .sub-menu{
+/*nav li:hover .sub-menu{*/
+nav li.active .sub-menu{
     display: block;
 }
 
@@ -386,7 +388,8 @@ nav li.menu-item-has-children:before{
     top: 50%;
     margin-top: -6px;
 }
-nav li.menu-item-has-children:hover:before{
+/*nav li.menu-item-has-children:hover:before{*/
+nav li.menu-item-has-children.active:before{0
     border-width: 0 2.5px 3px 2.5px;
     border-color: transparent transparent #0d2c54 transparent;
     right: 16px;
@@ -1368,6 +1371,10 @@ nav li.current_page_item > a{
     margin: 0 0 40px;
     font-size: 20px;
 }
+.examples_wrapper figure {
+    height: 197px;
+    overflow: hidden;
+}
 .examples-item{
   float: left;
   display: block;
@@ -1381,6 +1388,9 @@ nav li.current_page_item > a{
 }
 .examples-item img{
   width: 100%;
+}
+.examples_wrapper figure img {
+    height: 100%;
 }
 .examples-item:nth-child(4n+4){
   margin: 0 0 47px 0;
@@ -1603,6 +1613,13 @@ figure {
   margin: 0 2% 31px 0;
   border-radius: 5px;
 }
+.works_wrapper figure {
+    height: 204px;
+    overflow: hidden;
+}
+.works_wrapper figure img{
+    width: 100%;
+}
 .works-item img{
   max-width: 100%;
     -webkit-transition: all 0.6s ease-out;
@@ -1629,6 +1646,7 @@ figure {
 }
 .works-item h3{
   padding: 0 35px;
+  height: 48px;
   color: #ef662f;
   font-weight: 400;
   text-transform: initial;

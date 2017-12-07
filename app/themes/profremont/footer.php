@@ -65,7 +65,7 @@
     </div>
     <div class="mobile-show">
       <p class="bottom-phone"><?php echo get_option('site_telephone'); ?></p>
-      <a href="#" class="call-me-button">Перезвоните мне</a>
+      <a href="#" class="call-me-button" data-toggle="modal" data-target="#callback">Перезвоните мне</a>
     </div>
     <div class="footer-copy left">
       <p class="left">© 2010–2017, ООО «Франч-гид». Все права защищены.</p>

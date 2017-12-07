@@ -93,6 +93,7 @@ jQuery(document).ready(function($) {
 					termslug: termSlug
 				},
 				function(response) {
+					$('html, body').animate({ scrollTop: $(mainContent).offset().top }, 500);
 					mainContent.html(response);
 					requestAnimation(true);
 					updateUrl();
@@ -106,6 +107,7 @@ jQuery(document).ready(function($) {
 			jQuery.get(
 				myFilter.ajaxurl + url,
 				function(response) {
+					$('html, body').animate({ scrollTop: $(mainContent).offset().top }, 500);
 					mainContent.html(response);
 					requestAnimation(true);
 					updateUrl();

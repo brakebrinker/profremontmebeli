@@ -112,7 +112,7 @@ Template Name: Шаблон Главная страница
 
 		<div class="content-contacts_right right">
 			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
-			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
+			<a href="#sc-order-now" class="send-request inline button-green" data-toggle="modal" data-target="#callback">Отправить заявку</a>
 		</div>
 
 	</div>
@@ -156,7 +156,7 @@ Template Name: Шаблон Главная страница
 
 		<div class="content-contacts_right right">
 			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
-			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
+			<a href="#sc-order-now" class="send-request inline button-green" data-toggle="modal" data-target="#callback">Отправить заявку</a>
 		</div>
 
 	</div>
@@ -207,7 +207,8 @@ Template Name: Шаблон Главная страница
 				<?php endwhile; ?>
 			</ul>
 			<?php endif; ?>
-			<a href="#sc-order-now" class="button-green">Заказать ремонт</a>
+			<a href="#sc-order-now" class="button-green mobile-hide">Заказать ремонт</a>
+			<a href="#" class="button-green mobile-show" data-toggle="modal" data-target="#callback">Заказать ремонт</a>
 			<p>Для более точной цены вы можете прислать нам фотографии мебели <span class="whatsapp">в Whatsapp</span> и <span class="viber">Viber</span>: <?php echo get_option('mobile_phone'); ?></p>
 		</div>
 		<a class="button-yellow mobile-show calc-button">Калькулятор стоимости</a>
@@ -304,7 +305,7 @@ Template Name: Шаблон Главная страница
 
 		<div class="content-contacts_right right">
 			<p class="inline"><?php echo get_option('site_telephone'); ?></p>
-			<a href="#sc-order-now" class="send-request inline button-green">Отправить заявку</a>
+			<a href="#" class="send-request inline button-green" data-toggle="modal" data-target="#callback">Отправить заявку</a>
 		</div>
 
 	</div>
